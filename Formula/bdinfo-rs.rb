@@ -60,6 +60,11 @@ class BdinfoRs < Formula
 
     install_binary_aliases!
 
+    man1.install "bdinfo-rs.1"
+    bash_completion.install "bdinfo-rs.bash" => "bdinfo-rs"
+    zsh_completion.install "_bdinfo-rs"
+    fish_completion.install "bdinfo-rs.fish"
+
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
     leftover_contents = Dir["*"] - doc_files
