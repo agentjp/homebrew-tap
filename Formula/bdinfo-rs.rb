@@ -1,28 +1,28 @@
 class BdinfoRs < Formula
   desc "bdinfo-rs — a memory-safe command-line Blu-ray analyzer (no GUI)."
   homepage "https://github.com/agentjp/bdinfo-rs"
-  version "1.0.1"
+  version "1.1.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.0.1/bdinfo-rs-aarch64-apple-darwin.tar.gz"
-      sha256 "808f0ccf108f03822ebc4f38163c8f69befae9ce6be73ac0658ebcd6df208aba"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.1.0/bdinfo-rs-aarch64-apple-darwin.tar.gz"
+      sha256 "b2cd9517ac6ff706656c289a7107dbf8d394990b82f2a237e48889633070f139"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.0.1/bdinfo-rs-x86_64-apple-darwin.tar.gz"
-      sha256 "902fed5c350a3981142fcc8dc5bfcf7125d0248de2463d16122f3b81c48c6051"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.1.0/bdinfo-rs-x86_64-apple-darwin.tar.gz"
+      sha256 "d7ea266a7c2073ed921ba4fb6e62b0cf64fb4613203bfa61d4d6f3eef3fabdec"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.0.1/bdinfo-rs-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "7401567ccce7dfd3baad8a56ef559a14fef2b821ef0e4c6a49072287a978936f"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.1.0/bdinfo-rs-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "53b36226bf51619e906b344ceeaafc535158944aa968b9ee648495f60bf3a469"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.0.1/bdinfo-rs-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "251fc415c05136ba7ac783064d09e12b1a807999e3de8195ed62c98c18aad899"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.1.0/bdinfo-rs-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "6b4b2c7e943b58d2041681e7b6d4bdf13ec6babd00b83c441728405a658c31f0"
     end
   end
-  license "LGPL-2.1-only"
+  license "LGPL-2.1-or-later"
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin":               {},
@@ -59,7 +59,6 @@ class BdinfoRs < Formula
     bin.install "bdinfo-rs" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
-
     man1.install "bdinfo-rs.1"
     bash_completion.install "bdinfo-rs.bash" => "bdinfo-rs"
     zsh_completion.install "_bdinfo-rs"
