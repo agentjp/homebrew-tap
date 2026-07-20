@@ -1,25 +1,25 @@
 class BdinfoRs < Formula
   desc "bdinfo-rs — a memory-safe command-line Blu-ray analyzer (no GUI)."
   homepage "https://github.com/agentjp/bdinfo-rs"
-  version "1.2.0"
+  version "2.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.2.0/bdinfo-rs-aarch64-apple-darwin.tar.gz"
-      sha256 "2d9fa2114ec3c06fa65f203d0566e81f496b7375e3f951cf7d5a6cdefb04fb63"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v2.0.0/bdinfo-rs-aarch64-apple-darwin.tar.gz"
+      sha256 "a1050075b96ea7789d086a744917535f1000707268c355b93ffa10073f71744f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.2.0/bdinfo-rs-x86_64-apple-darwin.tar.gz"
-      sha256 "71c8464d196f4cc95e51c0e13c5fea6a892829c30c67a174929fe0a840ebe621"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v2.0.0/bdinfo-rs-x86_64-apple-darwin.tar.gz"
+      sha256 "ade1bee1ff99d42b46fc3fa62baa3f8111a713df370674e53a5338532d4d7bdc"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.2.0/bdinfo-rs-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "3191ebb7f9634baf17c317c89cc486474d5d5539d5258160fc60218c8c061453"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v2.0.0/bdinfo-rs-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "c6231760f37c3819392d3d764f2a933bbfdca7d46ba5d836daedf0206b8f8837"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v1.2.0/bdinfo-rs-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "cdff0a3114a8658a1acd6541402047dcd88309f743d577bcc7b552333b48bb5a"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v2.0.0/bdinfo-rs-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "805c06d8cb14ee1e6ce03e6d703eecc511525ba781bee6a2fe2afe2f66bdf7c8"
     end
   end
   license "LGPL-2.1-or-later"
