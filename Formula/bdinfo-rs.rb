@@ -1,25 +1,25 @@
 class BdinfoRs < Formula
   desc "bdinfo-rs — a memory-safe command-line Blu-ray analyzer (no GUI)."
   homepage "https://github.com/agentjp/bdinfo-rs"
-  version "3.0.0"
+  version "4.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v3.0.0/bdinfo-rs-aarch64-apple-darwin.tar.gz"
-      sha256 "e3271d2e73f3fc2179fd4bbb30968ebfb6a8e53d04011197e4c2d4fd927ff919"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v4.0.0/bdinfo-rs-aarch64-apple-darwin.tar.gz"
+      sha256 "1effdb7cf2581c5cd9f30de2ded7085c86bb8a839226017b68b319d9cd96cff0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v3.0.0/bdinfo-rs-x86_64-apple-darwin.tar.gz"
-      sha256 "461e55044d6a493864d8d5b8a11710182b58f7af94900bac56c02d1d18bfe49b"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v4.0.0/bdinfo-rs-x86_64-apple-darwin.tar.gz"
+      sha256 "18b53936602a5b85d33c38081530d03b145fd5aa24b03ae3bafb9373449f8a60"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v3.0.0/bdinfo-rs-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "adc1270f01fcb70f3c1cb89f409d09fef89aaf50a5f2ec11b2c24c74b847b1c0"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v4.0.0/bdinfo-rs-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "c1de7400f06525be2dce9193ec873bdb3dec0cee0f888b754bc6b79dd42bc342"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/agentjp/bdinfo-rs/releases/download/v3.0.0/bdinfo-rs-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "d9d8ccb2c359d48c5edf513426f7e8c2966c53563897eadec665d700c5daa84c"
+      url "https://github.com/agentjp/bdinfo-rs/releases/download/v4.0.0/bdinfo-rs-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "f1806556e0b65454ebf97dcc3a34d76b91d9894e9e4de30775fee8bf26e3fc82"
     end
   end
   license "LGPL-2.1-or-later"
@@ -53,10 +53,18 @@ class BdinfoRs < Formula
   end
 
   def install
-    bin.install "bdinfo-rs" if OS.mac? && Hardware::CPU.arm?
-    bin.install "bdinfo-rs" if OS.mac? && Hardware::CPU.intel?
-    bin.install "bdinfo-rs" if OS.linux? && Hardware::CPU.arm?
-    bin.install "bdinfo-rs" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "bdinfo-rs"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "bdinfo-rs"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "bdinfo-rs"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "bdinfo-rs"
+    end
 
     install_binary_aliases!
     man1.install "bdinfo-rs.1"
