@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 # Cask for the agentjp/homebrew-tap third-party tap. The `gui-publish.yml`
-# homebrew leg replaces 4.0.0 / 42ff99b5882892a5a0685794f19cc68141d13180e9d9d210ffe0cc5fbcc4a5fb / 8595b663ab96f86900fe7dee917c0df9db68cc9f1cc23481161633e47a23615e from the
+# homebrew leg replaces 5.0.0 / 94aeeea6c2934a7ff063bedd53e8b5f686168e22bfe29d52eb1cdb2f51fbcd95 / d82e4a5f0169db4791fc1420cc17ec6ddf267934d97e83315eb075b640b2b76f from the
 # release's verified SHA256SUMS and commits the result to the tap as
 # Casks/bdinfo-rs-gui.rb — one commit per release, like the CLI formula.
 #
@@ -13,9 +13,9 @@
 cask "bdinfo-rs-gui" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "4.0.0"
-  sha256 arm:   "42ff99b5882892a5a0685794f19cc68141d13180e9d9d210ffe0cc5fbcc4a5fb",
-         intel: "8595b663ab96f86900fe7dee917c0df9db68cc9f1cc23481161633e47a23615e"
+  version "5.0.0"
+  sha256 arm:   "94aeeea6c2934a7ff063bedd53e8b5f686168e22bfe29d52eb1cdb2f51fbcd95",
+         intel: "d82e4a5f0169db4791fc1420cc17ec6ddf267934d97e83315eb075b640b2b76f"
 
   url "https://github.com/agentjp/bdinfo-rs/releases/download/gui-v#{version}/bdinfo-rs-gui-#{arch}-apple-darwin.dmg"
   name "bdinfo-rs GUI"
